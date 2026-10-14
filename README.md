@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CodeCraft Chat
 
-## Getting Started
+Chat com IA moderno e completo conectado à **CodeCraft API** — streaming em tempo real, upload universal de arquivos, voz e histórico persistente.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3-38bdf8) ![License](https://img.shields.io/badge/license-MIT-green)
+
+## ✨ Funcionalidades
+
+- **CodeCraft API** — insira sua API Key nas configurações, detecção automática de modelos via `GET /v1/models`
+- **Streaming** — respostas em tempo real via `POST /v1/chat/completions` (SSE)
+- **Markdown completo** — syntax highlight, botão copiar código, tabelas, GFM
+- **Custo por conversa** — `usage` (prompt/completion/total) + pricing por modelo, exibição em USD com 6 casas decimais
+- **Upload universal** — drag & drop de qualquer arquivo (PDF, DOCX, TXT, CSV, XLSX, ZIP, imagens, código .py/.js...), imagens via vision, documentos com extração de texto no front-end
+- **Voz** — microfone (Web Speech API) + ouvir resposta (Text-to-Speech)
+- **Histórico** — LocalStorage + IndexedDB, favoritar, renomear, buscar, deletar, exportar para JSON / TXT / PDF
+- **Design** — moderno, minimalista, Dark/Light Mode, totalmente responsivo
+
+## 🚀 Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# abra http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Configure sua **API Key** e **Base URL** em ⚙️ Configurações (ex: `https://api.codecraft.ai`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 14** (App Router) + TypeScript
+- **Tailwind CSS** + **Lucide Icons**
+- **react-markdown** + **rehype-highlight**
+- **idb** (IndexedDB) + **jspdf**
 
-## Learn More
+## 📦 Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
